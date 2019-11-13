@@ -27,3 +27,14 @@ steps:
     apksignerKeystoreAlias: 'devopsazure'
     apksignerKeyPassword: 'devopsazure'
     zipalign: false
+
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'Azure_DevOps_Token'
+    appSlug: 'SILICUS/DevOps_Azure'
+    appFile: 'app/release/app-release.apk'
+    symbolsOption: 'Android'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'Initial release'
+    destinationType: 'groups'
+    distributionGroupId: '338d49f0-2a8d-42cc-bbe2-816b8c0d917c'

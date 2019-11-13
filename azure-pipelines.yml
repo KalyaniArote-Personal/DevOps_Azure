@@ -18,4 +18,12 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
-#initial Push
+
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'devops_azure.jks'
+    apksignerKeystorePassword: 'devopsazure'
+    apksignerKeystoreAlias: 'devopsazure'
+    apksignerKeyPassword: 'devopsazure'
+    zipalign: false
